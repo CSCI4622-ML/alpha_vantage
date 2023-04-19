@@ -21,7 +21,7 @@ class AlphaIntelligence(av):
                 data series, and 'full' returns the full-length intraday times
                 series, commonly above 1MB (default 'compact')
         """
-        _FUNCTION_KEY = "NEWS_SENTIMENT"
+        _FUNCTION_KEY = f"NEWS_SENTIMENT&tickers={symbol}"
         for key, value in kwargs.items():
             _FUNCTION_KEY += f"&{key}={value}"
         return _FUNCTION_KEY, "feed", 'sentiment_score_definition'
